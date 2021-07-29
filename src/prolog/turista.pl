@@ -21,15 +21,14 @@ sectores(la_vega, [centro_la_vega]).
 sectores(samana, [las_galeras,las_terrenas]).
 
 %1.D sectores-actividades
-actividades(centro_santo_domingo, [discoteca1, discoteca2, restaurante1, restaurante2, restaurante3, cine1, cine2, teatro1]).
-actividades(boca_chica, [discoteca1, restaurante1, restaurante2]).
-actividades(centro_santiago, [discoteca1, discoteca3, discoteca2, restaurante1, restaurante2, restaurante3, cine1, cine2, teatro1]).
-actividades(sosua,[discoteca1, discoteca2, restaurante1, restaurante2]).
-actividades(punta_cana,[discoteca1,discoteca2, restaurante1, restaurante2]).
-actividades(centro_la_vega,[discoteca1, discoteca2, restaurante1, 
-restaurante2, restaurante3]).
-actividades(las_galeras, [discoteca1, restaurante1, restaurante2]).
-actividades(las_terrenas, [discoteca2, restaurante2, restaurante3]).
+actividades(centro_santo_domingo, [discoteca1, discoteca2], [restaurante1, restaurante2, restaurante3], [cine1, cine2], [teatro1]).
+actividades(boca_chica, [discoteca1], [restaurante1, restaurante2], [], []).
+actividades(centro_santiago, [discoteca1, discoteca3, discoteca2], [restaurante1, restaurante2, restaurante3], [cine1, cine2], [teatro1]).
+actividades(sosua,[discoteca1, discoteca2], [restaurante1, restaurante2], [], []).
+actividades(punta_cana,[discoteca1,discoteca2], [restaurante1, restaurante2], [], []).
+actividades(centro_la_vega,[discoteca1, discoteca2], [restaurante1, restaurante2, restaurante3],[], []).
+actividades(las_galeras, [discoteca1], [restaurante1, restaurante2], [], []).
+actividades(las_terrenas, [discoteca2], [restaurante2, restaurante3], [], []).
 %1.F provincias-vecinas
 provincias_vecinas(santiago, la_vega).
 provincias_vecinas(santo_domingo,samana).
@@ -94,4 +93,33 @@ precio(restaurante3, 200).
 precio(cine1, 250).
 precio(cine2, 300).
 precio(teatro1, 200).
+
+%reglas generales
+calidadActividadPrecio(PrecioActividad, Clasificacion):- rango_precio(Min, Max, Clasi),PrecioActividad >= Min, PrecioActividad =< Max, Clasificacion = Clasi, !. 
+
+buscarEnLista([], _):-fail.
+buscarEnLista([Cabeza|_], CasoABuscar):- CasoABuscar =:= Cabeza, !.
+buscarEnLista([_|Cola], CasoABuscar):-buscarEnLista(Cola, CasoABuscar).
+
+
+
+%reglas restaurante
+
+
+%restaurantesPorPrecio(Restaurante, CalPrecio):-precio(Restaurante, Precio),
+%restaurante_presupuesto(Presupuesto, TipoComida, Ubicacion).
+
+
+%Peliculas del genero deseado
+buscarPeliculaPorGenero([], _):- fail.
+buscarPeliculaPorGenero([Cabeza|_], Genero ):- genero(Cabeza, Genero), !.
+buscarPeliculaPorGenero([_|Cola], Genero):- buscarPeliculaPorGenero(Cola, Genero).
+
+tienePelicula([], _, _):- fail.
+tienePelicula([Cabeza|_], Genero, Cine):- cine(Cabeza,Peliculas), buscarPeliculaPorGenero(Peliculas, Genero), Cine = Cabeza, !.
+tienePelicula([_|Cola], Genero, Cine):- tienePelicula(Cola,Genero, Cine).
+
+cinePelicula(Lugar, Genero, Cine):- actividades(Lugar,_,_,Cines,_), tienePelicula(Cines, Genero, Cine).
+
+
 
