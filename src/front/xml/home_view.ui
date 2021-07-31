@@ -29,7 +29,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>wepik-2021630-212918.png</pixmap>
+    <pixmap>../resources/beach_image.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -123,7 +123,7 @@ color: rgb(0, 21, 70);
   </widget>
  </widget>
  <resources>
-  <include location="image.qrc"/>
+  <include location="../image.qrc"/>
  </resources>
  <connections/>
 </ui>
