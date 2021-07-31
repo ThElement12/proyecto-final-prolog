@@ -16,7 +16,7 @@ class Ui_Form(object):
         self.label.setGeometry(QtCore.QRect(-350, -110, 1501, 991))
         self.label.setStyleSheet("")
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("resources/wepik-2021630-212918.png"))
+        self.label.setPixmap(QtGui.QPixmap("../resources/beach_image.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.btn_consultar = QtWidgets.QPushButton(Form)
