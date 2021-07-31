@@ -6,40 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1081</width>
-    <height>717</height>
+    <width>1085</width>
+    <height>488</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>-350</x>
-     <y>-110</y>
-     <width>1501</width>
-     <height>991</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap>../resources/beach_image.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
   <widget class="QPushButton" name="btn_consultar">
    <property name="geometry">
     <rect>
-     <x>460</x>
-     <y>360</y>
+     <x>430</x>
+     <y>80</y>
      <width>211</width>
      <height>51</height>
     </rect>
@@ -61,14 +39,14 @@ color: rgb(255,255,255);
 }</string>
    </property>
    <property name="text">
-    <string>Consultar</string>
+    <string>Restaurantes</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_salir">
+  <widget class="QPushButton" name="btn_consultar_2">
    <property name="geometry">
     <rect>
-     <x>460</x>
-     <y>440</y>
+     <x>120</x>
+     <y>80</y>
      <width>211</width>
      <height>51</height>
     </rect>
@@ -78,7 +56,6 @@ color: rgb(255,255,255);
      <family>Century Schoolbook L</family>
      <pointsize>12</pointsize>
      <weight>75</weight>
-     <italic>false</italic>
      <bold>true</bold>
     </font>
    </property>
@@ -91,34 +68,65 @@ color: rgb(255,255,255);
 }</string>
    </property>
    <property name="text">
-    <string>Salir</string>
+    <string>Hoteles</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QPushButton" name="btn_consultar_3">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>270</y>
-     <width>491</width>
+     <x>430</x>
+     <y>230</y>
+     <width>211</width>
      <height>51</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Century Schoolbook L</family>
-     <pointsize>16</pointsize>
+     <pointsize>12</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">QLabel{
-color: rgb(0, 21, 70);
+    <string notr="true">QPushButton{
+border-radius: 25px;
+background-color: rgb(0, 21, 70);
+color: rgb(255,255,255);
 
 }</string>
    </property>
    <property name="text">
-    <string>¿Mejores lugares para hacer turismo en RD?</string>
+    <string>Terrazas</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_consultar_4">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>80</y>
+     <width>211</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Century Schoolbook L</family>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+border-radius: 25px;
+background-color: rgb(0, 21, 70);
+color: rgb(255,255,255);
+
+}</string>
+   </property>
+   <property name="text">
+    <string>Playas</string>
    </property>
   </widget>
  </widget>
