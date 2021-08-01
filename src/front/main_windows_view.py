@@ -1,21 +1,22 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Main_windows.ui'
+# Form implementation generated from reading ui file 'main_windows_view.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from consult_topics import Ui_Form
+from consult_topics_view import Ui_Form
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1086, 716)
+        MainWindow.resize(1099, 716)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(370, 250, 491, 51))
+        self.label_2.setGeometry(QtCore.QRect(350, 250, 491, 51))
         font = QtGui.QFont()
         font.setFamily("Century Schoolbook L")
         font.setPointSize(16)
@@ -28,7 +29,7 @@ class Ui_MainWindow(object):
 "}")
         self.label_2.setObjectName("label_2")
         self.btn_consultar = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_consultar.setGeometry(QtCore.QRect(520, 340, 211, 51))
+        self.btn_consultar.setGeometry(QtCore.QRect(490, 340, 211, 51))
         font = QtGui.QFont()
         font.setFamily("Century Schoolbook L")
         font.setPointSize(12)
@@ -50,7 +51,7 @@ class Ui_MainWindow(object):
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.btn_salir = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_salir.setGeometry(QtCore.QRect(520, 420, 211, 51))
+        self.btn_salir.setGeometry(QtCore.QRect(490, 420, 211, 51))
         font = QtGui.QFont()
         font.setFamily("Century Schoolbook L")
         font.setPointSize(12)

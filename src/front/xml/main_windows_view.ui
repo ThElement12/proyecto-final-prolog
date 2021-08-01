@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1086</width>
+    <width>1099</width>
     <height>716</height>
    </rect>
   </property>
@@ -17,7 +17,7 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>370</x>
+      <x>350</x>
       <y>250</y>
       <width>491</width>
       <height>51</height>
@@ -44,7 +44,7 @@ color: rgb(0, 21, 70);
    <widget class="QPushButton" name="btn_consultar">
     <property name="geometry">
      <rect>
-      <x>520</x>
+      <x>490</x>
       <y>340</y>
       <width>211</width>
       <height>51</height>
@@ -95,7 +95,7 @@ color: rgb(255,255,255);
    <widget class="QPushButton" name="btn_salir">
     <property name="geometry">
      <rect>
-      <x>520</x>
+      <x>490</x>
       <y>420</y>
       <width>211</width>
       <height>51</height>
