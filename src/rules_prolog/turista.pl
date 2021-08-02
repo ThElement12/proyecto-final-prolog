@@ -25,10 +25,10 @@ restaurante(restaurante3,centro_santiago, 1000, normal).
 restaurante(restaurante4,centro_santiago, 1400, alta).
 restaurante(restaurante5,sosua, 100, normal).
 restaurante(restaurante6,bavaro, 200, baja).
-restaurante(restaurante6,bavaro, 900, alta).
-restaurante(restaurante6,bavaro, 700, normal).
-restaurante(restaurante7,punta_cana, 250, normal).
-restaurante(restaurante7,punta_cana, 400, alta).
+restaurante(restaurante7,bavaro, 900, alta).
+restaurante(restaurante8,sosua, 700, normal).
+restaurante(restaurante9,punta_cana, 250, normal).
+restaurante(restaurante10,punta_cana, 400, alta).
 
 discoteca(discoteca1,centro_santo_domingo, 100, baja).
 discoteca(discoteca2,centro_santiago, 500, normal).
@@ -55,6 +55,9 @@ tipocomida(restaurante4, gourmet).
 tipocomida(restaurante5, buffet).
 tipocomida(restaurante6, criolla).
 tipocomida(restaurante7, rapida).
+tipocomida(restaurante8, buffet).
+tipocomida(restaurante9, criolla).
+tipocomida(restaurante10, gourmet).
 
 %3 Rango de precio (economico, medio, elevado)
 rango_precio(Precio, economico):- Precio =< 599.
@@ -113,10 +116,20 @@ buscarPeliculaPorGenero([_|Cola], Genero):- buscarPeliculaPorGenero(Cola, Genero
 
 cinesPelicula(Lugar, Genero, Cines):- findall(Cine, (cine(Cine, Lugar, Peliculas), buscarPeliculaPorGenero(Peliculas, Genero)), Cines).
 
+%Con el presupuesto que tenemos para el día ¿Hay algún sitio donde podríamos comer en 
+%X, que sea Y y sirvan comida Z y nos quede el W% 
+%del mismo disponible para otras actividades del día?
+
+
+%restaurante(restaurante1,boca_chica, 400, baja).
+
+
+restaurantePresupuesto(Presupuesto, Ciudad, NivelEconomico, TipoComida, Restaurante):-restaurante(Restaurante, Ciudad, Costo, _),
+rango_precio(Costo, NivelEconomico), tipocomida(Restaurante, TipoComida), Presupuesto / 2 >= Costo.
+
 
 
 %Bares discotecas de precio elevado
-
 buscarDiscoPresupuesto(Lugar, Presupuesto, Puntuacion, CalPrecio, Discotecas):-findall(Disco, (
     discoteca(Disco, Lugar, Precio, Puntuacion), rango_precio(Precio, CalPrecio), Precio =< Presupuesto), Discotecas).
 
