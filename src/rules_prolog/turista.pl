@@ -124,8 +124,8 @@ cinesPelicula(Lugar, Genero, Cines):- findall(Cine, (cine(Cine, Lugar, Peliculas
 %restaurante(restaurante1,boca_chica, 400, baja).
 
 
-restaurantePresupuesto(Presupuesto, Ciudad, NivelEconomico, TipoComida, Restaurante):-restaurante(Restaurante, Ciudad, Costo, _),
-rango_precio(Costo, NivelEconomico), tipocomida(Restaurante, TipoComida), Presupuesto / 2 >= Costo.
+restaurantePresupuesto(Presupuesto, Ciudad, NivelEconomico, TipoComida, Porcentaje, Restaurante):-restaurante(Restaurante, Ciudad, Costo, _),
+rango_precio(Costo, NivelEconomico), tipocomida(Restaurante, TipoComida),Presupuesto * (Porcentaje / 100) >= Costo.
 
 
 

@@ -5,7 +5,7 @@ def main_prueba():
     prolog = Prolog()
     prolog.consult("rules_prolog/turista.pl")
 
-    query = "restaurantePresupuesto(5000, bavaro, medio, rapida, X)"
+    query = "restaurantePresupuesto(5000, bavaro, medio, rapida, 50, X)"
     q2 = prolog.query(query)
 
     for result in q2:
