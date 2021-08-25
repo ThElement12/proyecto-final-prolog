@@ -1,3 +1,15 @@
+:-dynamic provincia/1.
+:-dynamic playa/1.
+:-dynamic sector_playas/1.
+:-dynamic restaurante/1.
+:-dynamic discoteca/1.
+:-dynamic cine/1.
+:-dynamic sector/1.
+:-dynamic sectores_provincia/1.
+:-dynamic eventos_importantes/1.
+:-dynamic genero/1.
+:-dynamic tipocomida/1.
+
 %1.provincias
 provincia(santiago).
 provincia(santo_domingo).
@@ -5,20 +17,20 @@ provincia(puerto_plata).
 provincia(higuey).
 provincia(la_vega).
 provincia(samana).
-%1.A sectores-playas
-playas(boca_chica,[boca_chica]).
-playas(sosua, [sosua, cabarete, alicia]).
-playas(bavaro, [bavaro]).
-playas(punta_cana,[punta_cana,arena_blanca]).
-playas(las_terrenas, [las_terrenas]).
-playas(las_galeras, [las_galeras]).
-%1.B provincias-sectores
-sectores(santo_domingo, [boca_chica, centro_santo_domingo]).
-sectores(santiago, [centro_santiago]).
-sectores(puerto_plata, [sosua]).
-sectores(higuey,[bavaro, punta_cana]).
+%1.A playas por sector
+sector_playas(boca_chica,[boca_chica]).
+sector_playas(sosua, [sosua, cabarete, alicia]).
+sector_playas(bavaro, [bavaro]).
+sector_playas(punta_cana,[punta_cana,arena_blanca]).
+sector_playas(las_terrenas, [las_terrenas]).
+sector_playas(las_galeras, [las_galeras]).
+%1.B sectores por provincia
+sectores_provincia(santo_domingo, [boca_chica, centro_santo_domingo]).
+sectores_provincia(santiago, [centro_santiago]).
+sectores_provincia(puerto_plata, [sosua]).
+sectores_provincia(higuey,[bavaro, punta_cana]).
 
-%1.D sectores-actividades
+%1.D sectores_provincia-actividades
 restaurante(restaurante1,boca_chica, 400, baja).
 restaurante(restaurante2,centro_santo_domingo, 500, normal).
 restaurante(restaurante3,centro_santiago, 1000, normal).
