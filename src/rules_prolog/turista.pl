@@ -116,10 +116,18 @@ buscarEnLista([Cabeza|_], CasoABuscar):- CasoABuscar =:= Cabeza, !.
 buscarEnLista([_|Cola], CasoABuscar):-buscarEnLista(Cola, CasoABuscar).
 %reglas restaurante
 
+%Con el presupuesto que tenemos para el día ¿Hay algún sitio donde podríamos comer en 
+%X, que sea Y y sirvan comida Z y nos quede el W% 
+%del mismo disponible para otras actividades del día?
 
-%restaurantesPorPrecio(Restaurante, CalPrecio):-precio(Restaurante, Precio),
-%restaurante_presupuesto(Presupuesto, TipoComida, Ubicacion).
+restaurantePresupuesto(Presupuesto, Ciudad, NivelEconomico, TipoComida, Porcentaje, Restaurante):-restaurante(Restaurante, Ciudad, Costo, _),
+rango_precio(Costo, NivelEconomico), tipocomida(Restaurante, TipoComida),Presupuesto * (Porcentaje / 100) >= Costo.
 
+
+%Actividades culturales con X cantidad de dinero (nombre y lugar)
+
+actividadPorPresupuesto(Presupuesto, Actividad, Lugar):- eventos_importantes(Actividad, Costo, Lugar), Costo =< Presupuesto.
+todasLasActividades(Presupuesto, Lista):-findall((X,Y), actividadPorPresupuesto(Presupuesto, X, Y), Lista).
 
 %Peliculas del genero deseado
 buscarPeliculaPorGenero([], _):- fail.
@@ -127,19 +135,6 @@ buscarPeliculaPorGenero([Cabeza|_], Genero ):- genero(Cabeza, Genero), !.
 buscarPeliculaPorGenero([_|Cola], Genero):- buscarPeliculaPorGenero(Cola, Genero).
 
 cinesPelicula(Lugar, Genero, Cines):- findall(Cine, (cine(Cine, Lugar, Peliculas), buscarPeliculaPorGenero(Peliculas, Genero)), Cines).
-
-%Con el presupuesto que tenemos para el día ¿Hay algún sitio donde podríamos comer en 
-%X, que sea Y y sirvan comida Z y nos quede el W% 
-%del mismo disponible para otras actividades del día?
-
-
-%restaurante(restaurante1,boca_chica, 400, baja).
-
-
-restaurantePresupuesto(Presupuesto, Ciudad, NivelEconomico, TipoComida, Porcentaje, Restaurante):-restaurante(Restaurante, Ciudad, Costo, _),
-rango_precio(Costo, NivelEconomico), tipocomida(Restaurante, TipoComida),Presupuesto * (Porcentaje / 100) >= Costo.
-
-
 
 %Bares discotecas de precio elevado
 buscarDiscoPresupuesto(Lugar, Presupuesto, Puntuacion, CalPrecio, Discotecas):-findall(Disco, (
