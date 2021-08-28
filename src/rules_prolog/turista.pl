@@ -31,33 +31,33 @@ sectores_provincia(puerto_plata, [sosua]).
 sectores_provincia(higuey,[bavaro, punta_cana]).
 
 %1.D sectores_provincia-actividades
-restaurante(restaurante1,boca_chica, 400, baja).
-restaurante(restaurante2,centro_santo_domingo, 500, normal).
-restaurante(restaurante3,centro_santiago, 1000, normal).
-restaurante(restaurante4,centro_santiago, 1400, alta).
-restaurante(restaurante5,sosua, 100, normal).
-restaurante(restaurante6,bavaro, 200, baja).
-restaurante(restaurante7,bavaro, 900, alta).
-restaurante(restaurante8,sosua, 700, normal).
-restaurante(restaurante9,punta_cana, 250, normal).
-restaurante(restaurante10,punta_cana, 400, alta).
+restaurante(restaurante1,boca_chica, 400, 2).
+restaurante(restaurante2,centro_santo_domingo, 500, 4).
+restaurante(restaurante3,centro_santiago, 1000, 7).
+restaurante(restaurante4,centro_santiago, 1400, 9).
+restaurante(restaurante5,sosua, 100, 5).
+restaurante(restaurante6,bavaro, 200, 3).
+restaurante(restaurante7,bavaro, 900, 10).
+restaurante(restaurante8,sosua, 700, 6).
+restaurante(restaurante9,punta_cana, 250, 6).
+restaurante(restaurante10,punta_cana, 400, 8).
 
-discoteca(discoteca1,centro_santo_domingo, 100, baja).
-discoteca(discoteca2,centro_santiago, 500, normal).
-discoteca(discoteca3,centro_santiago, 500, alta).
-discoteca(discoteca4,sosua, 1200, alta).
-discoteca(discoteca5,bavaro, 1200, baja).
-discoteca(discoteca6,punta_cana, 1200, alta).
-discoteca(discoteca7, centro_santiago, 1400, alta).
-discoteca(discoteca8,punta_cana, 1200, alta).
+discoteca(discoteca1,centro_santo_domingo, 100, 1).
+discoteca(discoteca2,centro_santiago, 500, 7).
+discoteca(discoteca3,centro_santiago, 500, 8).
+discoteca(discoteca4,sosua, 1200, 9).
+discoteca(discoteca5,bavaro, 1200, 1).
+discoteca(discoteca6,punta_cana, 1200, 10).
+discoteca(discoteca7, centro_santiago, 1400, 10).
+discoteca(discoteca8,punta_cana, 1200, 8).
 
-cine(cine1, centro_santiago, 500, normal).
-cine(cine2,centro_santiago, 250, alta).
-cine(cine3,centro_santiago, 250, alta).
-cine(cine4,centro_santo_domingo, 400, baja).
-cine(cine5,centro_santo_domingo, 300, alta).
-cine(cine6,centro_santo_domingo, 300, normal).
-cine(cine7,punta_cana, 250, alta).
+cine(cine1, centro_santiago, 500, 5).
+cine(cine2,centro_santiago, 250, 9).
+cine(cine3,centro_santiago, 250, 8).
+cine(cine4,centro_santo_domingo, 400, 1).
+cine(cine5,centro_santo_domingo, 300, 8).
+cine(cine6,centro_santo_domingo, 300, 6).
+cine(cine7,punta_cana, 250, 9).
 
 %2 tipocomida restaurantes
 tipocomida(restaurante1, criolla).
@@ -75,6 +75,13 @@ tipocomida(restaurante10, gourmet).
 rango_precio(Precio, economico):- Precio =< 599.
 rango_precio(Precio, medio):- Precio >= 600, Precio =< 1199.
 rango_precio(Precio, elevado):- Precio >= 1200.
+
+%3.1 Rango calificacion(mala, regular, buena)
+rango_calificacion(Calificacion, mala):- Calificacion =< 4.
+rango_calificacion(Calificacion, regular):- Calificacion >= 5, Calificacion =< 7.
+rango_calificacion(Calificacion, excelente):- Calificacion >= 8, Calificacion =< 10.
+
+
 %4 playas
 playa(boca_chica).
 playa(sosua).
@@ -144,7 +151,7 @@ cinesPelicula(Lugar, Genero, Cines):- findall(Cine, (cine(Cine, Lugar, Peliculas
 
 %Bares discotecas de precio elevado
 buscarDiscoPresupuesto(Lugar, Presupuesto, Puntuacion, CalPrecio, Discotecas):-findall(Disco, (
-    discoteca(Disco, Lugar, Precio, Puntuacion), rango_precio(Precio, CalPrecio), Precio =< Presupuesto), Discotecas).
+    discoteca(Disco, Lugar, Precio, NumeroPuntuacion), rango_calificacion(NumeroPuntuacion, Puntuacion), rango_precio(Precio, CalPrecio), Precio =< Presupuesto), Discotecas).
 
 %discotecaPornormalPrecio([Cabeza|_], Puntuacion, Precio, Discotecas):- 
 
