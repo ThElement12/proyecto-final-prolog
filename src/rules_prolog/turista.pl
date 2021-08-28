@@ -92,7 +92,13 @@ sector(bavaro).
 sector(punta_cana).
 sector(las_terrenas).
 sector(las_galeras).
-%6 eventos, sector
+
+%6 eventos_culturales secto
+eventos_culturales(obra_teatro1, 1500, centro_santiago).
+eventos_culturales(obra_teatro2, 1300, sosua).
+eventos_culturales(carnaval, 0,centro_la_vega).
+
+%7 eventos, sector
 eventos_importantes(concierto1, 600, boca_chica).
 eventos_importantes(concierto2, 1300, sosua).
 eventos_importantes(carnaval, 0,centro_la_vega).
@@ -126,7 +132,7 @@ rango_precio(Costo, NivelEconomico), tipocomida(Restaurante, TipoComida),Presupu
 
 %Actividades culturales con X cantidad de dinero (nombre y lugar)
 
-actividadPorPresupuesto(Presupuesto, Actividad, Lugar):- eventos_importantes(Actividad, Costo, Lugar), Costo =< Presupuesto.
+actividadPorPresupuesto(Presupuesto, Actividad, Lugar):- eventos_culturales(Actividad, Costo, Lugar), Costo =< Presupuesto.
 todasLasActividades(Presupuesto, Lista):-findall((X,Y), actividadPorPresupuesto(Presupuesto, X, Y), Lista).
 
 %Peliculas del genero deseado
