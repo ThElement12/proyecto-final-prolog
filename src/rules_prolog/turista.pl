@@ -56,6 +56,7 @@ discoteca(discoteca7, centro_santiago, 1400, 10).
 discoteca(discoteca8,punta_cana, 1200, 8).
 
 cine(cine1, centro_santiago, 500, 5).
+cine(cine1, centro_santo_domingo, 200, 9).
 cine(cine2,centro_santiago, 250, 9).
 cine(cine3,centro_santiago, 250, 8).
 cine(cine4,centro_santo_domingo, 400, 1).
