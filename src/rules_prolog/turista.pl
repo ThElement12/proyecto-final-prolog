@@ -1,15 +1,16 @@
 :-dynamic provincia/1.
 :-dynamic playa/1.
-:-dynamic sector_playas/1.
-:-dynamic restaurante/1.
-:-dynamic discoteca/1.
-:-dynamic cine/1.
+:-dynamic sector_playas/2.
+:-dynamic restaurante/5.
+:-dynamic discoteca/4.
+:-dynamic cine/4.
+:-dynamic cine_pelicula/2.
 :-dynamic sector/1.
-:-dynamic sectores_provincia/1.
-:-dynamic eventos_importantes/1.
-:-dynamic eventos_culturales/1.
-:-dynamic genero/1.
-:-dynamic tipocomida/1.
+:-dynamic sectores_provincia/2.
+:-dynamic eventos_importantes/3.
+:-dynamic eventos_culturales/3.
+:-dynamic genero/2.
+:-dynamic tipocomida/2.
 
 %1.provincias
 provincia(santiago).
@@ -167,12 +168,8 @@ sucursales(Nombre, Resultado):- bagof(Sector,restaurante(Nombre,Sector,_,_,_),Re
 cine_sucursales(Nombre, Resultado):- bagof(Sector,cine(Nombre,Sector,_,_),Resultado).
 % extra 3 Buscar un restaurante que quede cerca de algun evento
 % importante
-restauranteimp(Evento,Presupuesto, Restaurante):- eventos_importantes(Evento,Precio,Lugar)
-,restaurante(Restaurante,Lugar,Preciob,_,_)
-,Calculo is Precio+Preciob,Presupuesto>=Calculo, write(Restaurante).
-
-
-
-
+restauranteimp(Evento,Presupuesto,Hora_restaurante, Restaurante):- eventos_importantes(Evento,Precio,Lugar)
+,restaurante(Restaurante,Lugar,Preciob,_,Hora_cierre),Hora_restaurante<Hora_cierre
+,Calculo is Precio+Preciob,Presupuesto>=Calculo.
 
 
