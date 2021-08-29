@@ -154,8 +154,23 @@ cinesPelicula(Lugar, Genero, Cines):- findall(Cine, (cine_pelicula(Cine, Pelicul
 buscarDiscoPresupuesto(Lugar, Presupuesto, Puntuacion, CalPrecio, Discotecas):-findall(Disco, (
     discoteca(Disco, Lugar, Precio, NumeroPuntuacion), rango_calificacion(NumeroPuntuacion, Puntuacion), rango_precio(Precio, CalPrecio), Precio =< Presupuesto), Discotecas).
 
-%discotecaPornormalPrecio([Cabeza|_], Puntuacion, Precio, Discotecas):- 
 
-%getDiscoteca(Precio, Puntuacion, Ciudad, Discotecas):-actividades(Ciudad,Discos_ciudad, _,_,_).
+% extra 1 , El visitante ha escuchado acerca de un restaurante en
+% especifico y le gustaria saber si el mismo tiene diversas surcursales
+multrestaurantes(Nombre, Resultado):- bagof(Sector,restaurante(Nombre,Sector,_,_),Resultado).
+
+
+% extra 2 , El visitante ha escuchado acerca de un cine en
+% especifico y le gustaria saber si el mismo tiene diversas surcursales
+multcine(Nombre, Resultado):- bagof(Sector,cine(Nombre,Sector,_,_),Resultado).
+
+% extra 3 Buscar un restaurante que quede cerca de algun evento
+% importante
+restauranteimp(Evento, Restaurante):- eventos_importantes(Evento,_,Lugar),restaurante(Restaurante,Lugar,_,_).
+
+
+
+
+
 
 
