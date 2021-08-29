@@ -7,6 +7,7 @@
 :-dynamic sector/1.
 :-dynamic sectores_provincia/1.
 :-dynamic eventos_importantes/1.
+:-dynamic eventos_culturales/1.
 :-dynamic genero/1.
 :-dynamic tipocomida/1.
 
@@ -110,13 +111,13 @@ eventos_importantes(concierto1, 600, boca_chica).
 eventos_importantes(concierto2, 1300, sosua).
 eventos_importantes(carnaval, 0,centro_la_vega).
 %8 cine-peliculas
-cine(cine1, centro_santiago, [pelicula1, pelicula2, pelicula3, pelicula4]).
-cine(cine2, centro_santo_domingo, [pelicula2,pelicula4, pelicula1]).
-cine(cine3, centro_santo_domingo, [pelicula1, pelicula2, pelicula3, pelicula4]).
-cine(cine4, centro_santiago, [pelicula2,pelicula4, pelicula1]).
-cine(cine5, bavaro, [pelicula1, pelicula2, pelicula3]).
-cine(cine6, sosua, [pelicula2,pelicula4, pelicula1]).
-cine(cine7, centro_santiago,[pelicula2,pelicula4, pelicula1]).
+cine_pelicula(cine1, [pelicula1, pelicula2, pelicula3, pelicula4]).
+cine_pelicula(cine2,  [pelicula2,pelicula4, pelicula1]).
+cine_pelicula(cine3,  [pelicula1, pelicula2, pelicula3, pelicula4]).
+cine_pelicula(cine4,  [pelicula2,pelicula4, pelicula1]).
+cine_pelicula(cine5,  [pelicula1, pelicula2, pelicula3]).
+cine_pelicula(cine6,  [pelicula2,pelicula4, pelicula1]).
+cine_pelicula(cine7, [pelicula2,pelicula4, pelicula1]).
 %8 A genero-pelicula
 genero(pelicula1, terror).
 genero(pelicula2, drama).
@@ -147,7 +148,7 @@ buscarPeliculaPorGenero([], _):- fail.
 buscarPeliculaPorGenero([Cabeza|_], Genero ):- genero(Cabeza, Genero), !.
 buscarPeliculaPorGenero([_|Cola], Genero):- buscarPeliculaPorGenero(Cola, Genero).
 
-cinesPelicula(Lugar, Genero, Cines):- findall(Cine, (cine(Cine, Lugar, Peliculas), buscarPeliculaPorGenero(Peliculas, Genero)), Cines).
+cinesPelicula(Lugar, Genero, Cines):- findall(Cine, (cine_pelicula(Cine, Peliculas), cine(Cine,Lugar,_,_), buscarPeliculaPorGenero(Peliculas, Genero)), Cines).
 
 %Bares discotecas de precio elevado
 buscarDiscoPresupuesto(Lugar, Presupuesto, Puntuacion, CalPrecio, Discotecas):-findall(Disco, (
