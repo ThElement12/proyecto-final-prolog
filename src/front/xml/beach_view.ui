@@ -322,6 +322,12 @@ color: rgb(255,255,255);
 font-weight: bold;
 font-family: CenturySchoolBook L;
 font-size: 14px;
+}
+
+
+QPushButton:hover{
+	background-color: rgb(114, 159, 207);
+
 }</string>
      </property>
      <property name="text">
@@ -508,6 +514,12 @@ color: rgb(255,255,255);
 font-weight: bold;
 font-family: CenturySchoolBook L;
 font-size: 14px;
+}
+
+
+QPushButton:hover{
+	background-color: rgb(114, 159, 207);
+
 }</string>
      </property>
      <property name="text">
@@ -793,6 +805,12 @@ color: rgb(255,255,255);
 font-weight: bold;
 font-family: CenturySchoolBook L;
 font-size: 14px;
+}
+
+
+QPushButton:hover{
+	background-color: rgb(114, 159, 207);
+
 }</string>
      </property>
      <property name="text">
