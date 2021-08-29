@@ -32,16 +32,18 @@ sectores_provincia(puerto_plata, [sosua]).
 sectores_provincia(higuey,[bavaro, punta_cana]).
 
 %1.D sectores_provincia-actividades
-restaurante(restaurante1,boca_chica, 400, 2).
-restaurante(restaurante2,centro_santo_domingo, 500, 4).
-restaurante(restaurante3,centro_santiago, 1000, 7).
-restaurante(restaurante4,centro_santiago, 1400, 9).
-restaurante(restaurante5,sosua, 100, 5).
-restaurante(restaurante6,bavaro, 200, 3).
-restaurante(restaurante7,bavaro, 900, 10).
-restaurante(restaurante8,sosua, 700, 6).
-restaurante(restaurante9,punta_cana, 250, 6).
-restaurante(restaurante10,punta_cana, 400, 8).
+%restaurante (nombre, lugar, precio, calificacion, hora de cierre)
+restaurante(restaurante1,boca_chica, 400, 2, 22).
+restaurante(restaurante1,centro_santo_domingo, 400, 5, 23).
+restaurante(restaurante2,centro_santo_domingo, 500, 4, 20).
+restaurante(restaurante3,centro_santiago, 1000, 7, 16).
+restaurante(restaurante4,centro_santiago, 1400, 9, 0).
+restaurante(restaurante5,sosua, 100, 5, 23).
+restaurante(restaurante6,bavaro, 200, 3, 14).
+restaurante(restaurante7,bavaro, 900, 10, 18).
+restaurante(restaurante8,sosua, 700, 6, 12).
+restaurante(restaurante9,punta_cana, 250, 6, 3).
+restaurante(restaurante10,punta_cana, 400, 8, 5).
 
 discoteca(discoteca1,centro_santo_domingo, 100, 1).
 discoteca(discoteca2,centro_santiago, 500, 7).
@@ -109,7 +111,8 @@ eventos_culturales(carnaval, 0,centro_la_vega).
 %7 eventos, sector
 eventos_importantes(concierto1, 600, boca_chica).
 eventos_importantes(concierto2, 1300, sosua).
-eventos_importantes(carnaval, 0,centro_la_vega).
+eventos_importantes(concierto_juan_luis_guerra, 600, boca_chica).
+eventos_importantes(noche_jazz, 1300, centro_santiago).
 %8 cine-peliculas
 cine_pelicula(cine1, [pelicula1, pelicula2, pelicula3, pelicula4]).
 cine_pelicula(cine2,  [pelicula2,pelicula4, pelicula1]).
@@ -134,7 +137,7 @@ buscarEnLista([_|Cola], CasoABuscar):-buscarEnLista(Cola, CasoABuscar).
 %X, que sea Y y sirvan comida Z y nos quede el W% 
 %del mismo disponible para otras actividades del día?
 
-restaurantePresupuesto(Presupuesto, Ciudad, NivelEconomico, TipoComida, Porcentaje, Restaurante):-restaurante(Restaurante, Ciudad, Costo, _),
+restaurantePresupuesto(Presupuesto, Ciudad, NivelEconomico, TipoComida, Porcentaje, Restaurante):-restaurante(Restaurante, Ciudad, Costo, _, _),
 rango_precio(Costo, NivelEconomico), tipocomida(Restaurante, TipoComida),Presupuesto * (Porcentaje / 100) >= Costo.
 
 
@@ -157,17 +160,16 @@ buscarDiscoPresupuesto(Lugar, Presupuesto, Puntuacion, CalPrecio, Discotecas):-f
 
 % extra 1 , El visitante ha escuchado acerca de un restaurante en
 % especifico y le gustaria saber si el mismo tiene diversas surcursales
-multrestaurantes(Nombre, Resultado):- bagof(Sector,restaurante(Nombre,Sector,_,_),Resultado).
-
+sucursales(Nombre, Resultado):- bagof(Sector,restaurante(Nombre,Sector,_,_,_),Resultado).
 
 % extra 2 , El visitante ha escuchado acerca de un cine en
 % especifico y le gustaria saber si el mismo tiene diversas surcursales
-multcine(Nombre, Resultado):- bagof(Sector,cine(Nombre,Sector,_,_),Resultado).
-
+cine_sucursales(Nombre, Resultado):- bagof(Sector,cine(Nombre,Sector,_,_),Resultado).
 % extra 3 Buscar un restaurante que quede cerca de algun evento
 % importante
-restauranteimp(Evento, Restaurante):- eventos_importantes(Evento,_,Lugar),restaurante(Restaurante,Lugar,_,_).
-
+restauranteimp(Evento,Presupuesto, Restaurante):- eventos_importantes(Evento,Precio,Lugar)
+,restaurante(Restaurante,Lugar,Preciob,_,_)
+,Calculo is Precio+Preciob,Presupuesto>=Calculo, write(Restaurante).
 
 
 
