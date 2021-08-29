@@ -8,6 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
@@ -84,7 +85,6 @@ class Ui_Form(object):
         self.btn_consultar_3.setText(_translate("Form", "Terrazas"))
         self.btn_consultar_4.setText(_translate("Form", "Playas"))
 
-import image_rc
 
 if __name__ == "__main__":
     import sys

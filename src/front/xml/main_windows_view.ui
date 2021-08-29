@@ -86,7 +86,33 @@ image:None;
 }</string>
     </property>
     <property name="text">
+<<<<<<< HEAD
      <string>Salir</string>
+=======
+     <string>Consultar</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>-320</x>
+      <y>-110</y>
+      <width>1501</width>
+      <height>991</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/fondo/resources/beach_image.png)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../image.qrc">:/fondo/resources/beach_image.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+>>>>>>> d709ef5c204fb05594e15761e1a7181be33adc78
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -123,7 +149,11 @@ image: None;
   </widget>
  </widget>
  <resources>
+<<<<<<< HEAD
   <include location="image.qrc"/>
+=======
+  <include location="../image.qrc"/>
+>>>>>>> d709ef5c204fb05594e15761e1a7181be33adc78
  </resources>
  <connections/>
 </ui>
