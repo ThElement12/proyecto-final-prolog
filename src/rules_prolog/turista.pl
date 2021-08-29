@@ -161,13 +161,17 @@ buscarDiscoPresupuesto(Lugar, Presupuesto, Puntuacion, CalPrecio, Discotecas):-f
 
 % extra 1 , El visitante ha escuchado acerca de un restaurante en
 % especifico y le gustaria saber si el mismo tiene diversas surcursales
+
 sucursales(Nombre, Resultado):- bagof(Sector,restaurante(Nombre,Sector,_,_,_),Resultado).
 
 % extra 2 , El visitante ha escuchado acerca de un cine en
 % especifico y le gustaria saber si el mismo tiene diversas surcursales
+
 cine_sucursales(Nombre, Resultado):- bagof(Sector,cine(Nombre,Sector,_,_),Resultado).
+
 % extra 3 Buscar un restaurante que quede cerca de algun evento
 % importante
+
 restauranteimp(Evento,Presupuesto,Hora_restaurante, Restaurante):- eventos_importantes(Evento,Precio,Lugar)
 ,restaurante(Restaurante,Lugar,Preciob,_,Hora_cierre),Hora_restaurante<Hora_cierre
 ,Calculo is Precio+Preciob,Presupuesto>=Calculo.
