@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1090</width>
+    <width>1094</width>
     <height>498</height>
    </rect>
   </property>
@@ -21,7 +21,7 @@
     <rect>
      <x>-10</x>
      <y>0</y>
-     <width>1101</width>
+     <width>1111</width>
      <height>501</height>
     </rect>
    </property>
@@ -31,7 +31,7 @@
     </font>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">

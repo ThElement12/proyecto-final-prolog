@@ -41,7 +41,7 @@ font-weight: bold;
 }</string>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="tab_2">
     <attribute name="title">
@@ -50,7 +50,7 @@ font-weight: bold;
     <widget class="QWidget" name="">
      <property name="geometry">
       <rect>
-       <x>60</x>
+       <x>70</x>
        <y>60</y>
        <width>71</width>
        <height>311</height>
@@ -277,8 +277,8 @@ font-weight: bold;</string>
     <widget class="QLabel" name="label_restaurant">
      <property name="geometry">
       <rect>
-       <x>640</x>
-       <y>70</y>
+       <x>490</x>
+       <y>60</y>
        <width>241</width>
        <height>41</height>
       </rect>
@@ -294,41 +294,10 @@ font-weight: bold;</string>
       <string notr="true">background-color: transparent;</string>
      </property>
      <property name="text">
-      <string>Restaurante recomendado:</string>
+      <string>Restaurante/s recomendado/s:</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_consult_restaurant">
-     <property name="geometry">
-      <rect>
-       <x>280</x>
-       <y>390</y>
-       <width>101</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>CenturySchoolBook L</family>
-       <pointsize>-1</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton{
-border-radius: 15px;
-background-color: rgb(0, 21, 70);
-color: rgb(255,255,255);
-font-weight: bold;
-font-family: CenturySchoolBook L;
-font-size: 14px;
-}</string>
-     </property>
-     <property name="text">
-      <string>Consultar</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_back_restaurant">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -356,69 +325,7 @@ font-size: 14px;
 }</string>
      </property>
      <property name="text">
-      <string>Volver</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_result_restaurant">
-     <property name="geometry">
-      <rect>
-       <x>640</x>
-       <y>120</y>
-       <width>341</width>
-       <height>181</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QLabel{
-font-family: Century SchoolBook L;
-border-radius: 15px;
-background-color: rgb(211, 215, 207);
-color: rgb(0,0,0);
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_question_restaurant">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
-     <property name="geometry">
-      <rect>
-       <x>60</x>
-       <y>10</y>
-       <width>921</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Century Schoolbook L</family>
-       <weight>75</weight>
-       <bold>true</bold>
-       <stylestrategy>PreferAntialias</stylestrategy>
-       <kerning>false</kerning>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: transparent;</string>
-     </property>
-     <property name="lineWidth">
-      <number>0</number>
-     </property>
-     <property name="html">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Century Schoolbook L'; font-size:11pt; font-weight:600; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:100%; background-color:transparent;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; background-color:transparent;&quot;&gt;¿Hay algún sitio donde podríamos comer en la playa &lt;/span&gt;&lt;span style=&quot; font-family:'Ubuntu';&quot;&gt;de Cabarete, o cerca, que sea económico y sirvan comida criolla y nos quede el 50% del mismo disponible para otras actividades del día?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-     <property name="overwriteMode">
-      <bool>false</bool>
-     </property>
-     <property name="acceptRichText">
-      <bool>true</bool>
+      <string>Consultar</string>
      </property>
     </widget>
     <widget class="QComboBox" name="comboBox_city_restaurant_2">
@@ -480,6 +387,27 @@ p, li { white-space: pre-wrap; }
       <double>100.000000000000000</double>
      </property>
     </widget>
+    <widget class="QLabel" name="label_result_disco_recommended_2">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>110</y>
+       <width>591</width>
+       <height>371</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+font-family: Century SchoolBook L;
+border-radius: 15px;
+background-color: rgb(211, 215, 207);
+color: rgb(0,0,0);
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
     <zorder></zorder>
     <zorder>label_budget_restaurant</zorder>
     <zorder>comboBox_3</zorder>
@@ -489,23 +417,432 @@ p, li { white-space: pre-wrap; }
     <zorder>label_city_restaurant</zorder>
     <zorder>label_porcentage_restaurant</zorder>
     <zorder>pushButton_consult_restaurant</zorder>
-    <zorder>pushButton_back_restaurant</zorder>
-    <zorder>label_result_restaurant</zorder>
-    <zorder>textEdit_question_restaurant</zorder>
     <zorder>comboBox_city_restaurant_2</zorder>
     <zorder>doubleSpinBox_2</zorder>
     <zorder>label_restaurant</zorder>
     <zorder>doubleSpinBox_3</zorder>
+    <zorder>label_result_disco_recommended_2</zorder>
    </widget>
    <widget class="QWidget" name="tab_4">
     <attribute name="title">
      <string>Consulta 2</string>
     </attribute>
+    <widget class="QComboBox" name="comboBox_name_of_restaurant">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>70</y>
+       <width>271</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="currentText">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_name_of_restaurant">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>110</y>
+       <width>171</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-family: Century SchoolBook L;
+color: rgb(136, 138, 133);
+background: transparent;
+border: none;
+font-weight: bold;</string>
+     </property>
+     <property name="text">
+      <string>Nombre restaurante</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_foodIcon_restaurant_2">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>70</y>
+       <width>69</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../resources/food_icon.png</normaloff>../resources/food_icon.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_consult_restaurant_2">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>150</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>CenturySchoolBook L</family>
+       <pointsize>-1</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+border-radius: 15px;
+background-color: rgb(0, 21, 70);
+color: rgb(255,255,255);
+font-weight: bold;
+font-family: CenturySchoolBook L;
+font-size: 14px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Consultar</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_restaurant_2">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>50</y>
+       <width>241</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Century Schoolbook L</family>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string>Sector/es restaurante/s:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_result_restaurant_recommended">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>100</y>
+       <width>591</width>
+       <height>371</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+font-family: Century SchoolBook L;
+border-radius: 15px;
+background-color: rgb(211, 215, 207);
+color: rgb(0,0,0);
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="tab">
     <attribute name="title">
      <string>Consulta 3</string>
     </attribute>
+    <widget class="QLabel" name="label_budget_restaurant_3">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>110</y>
+       <width>171</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-family: Century SchoolBook L;
+color: rgb(136, 138, 133);
+background: transparent;
+border: none;
+font-weight: bold;</string>
+     </property>
+     <property name="text">
+      <string>Nombre evento</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox_city_restaurant_4">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>70</y>
+       <width>271</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="currentText">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_budget_icon">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>150</y>
+       <width>91</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+border-radius: 20px;
+background-color: transparent;
+color: rgb(0,0,0);
+font-family: Century SchoolBook L;
+font-weight: bold;
+
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../resources/budget_icon.png</normaloff>../resources/budget_icon.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_budget_restaurant_4">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>190</y>
+       <width>171</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-family: Century SchoolBook L;
+color: rgb(136, 138, 133);
+background: transparent;
+border: none;
+font-weight: bold;</string>
+     </property>
+     <property name="text">
+      <string>Presupuesto</string>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="doubleSpinBox_4">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>160</y>
+       <width>271</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Century Schoolbook L</family>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="maximum">
+      <double>100.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinBox_hour_restaurant_3">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>250</y>
+       <width>271</width>
+       <height>26</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_hour_restaurant_3">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>280</y>
+       <width>171</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-family: Century SchoolBook L;
+color: rgb(136, 138, 133);
+background: transparent;
+border: none;
+font-weight: bold;</string>
+     </property>
+     <property name="text">
+      <string>Hora restaurante</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_event_icon">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>60</y>
+       <width>91</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+border-radius: 20px;
+background-color: transparent;
+color: rgb(0,0,0);
+font-family: Century SchoolBook L;
+font-weight: bold;
+
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../resources/event_icon.png</normaloff>../resources/event_icon.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_hour_icon">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>240</y>
+       <width>91</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+border-radius: 20px;
+background-color: transparent;
+color: rgb(0,0,0);
+font-family: Century SchoolBook L;
+font-weight: bold;
+
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../resources/hour_icon.png</normaloff>../resources/hour_icon.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_consult_restaurant_3">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>320</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>CenturySchoolBook L</family>
+       <pointsize>-1</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+border-radius: 15px;
+background-color: rgb(0, 21, 70);
+color: rgb(255,255,255);
+font-weight: bold;
+font-family: CenturySchoolBook L;
+font-size: 14px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Consultar</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_recommended_restaurant_3">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>50</y>
+       <width>261</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Century Schoolbook L</family>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string>Restaurante/s recomendado/s:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_result_disco_recommended">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>100</y>
+       <width>591</width>
+       <height>371</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+font-family: Century SchoolBook L;
+border-radius: 15px;
+background-color: rgb(211, 215, 207);
+color: rgb(0,0,0);
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QLabel" name="label">
