@@ -1,7 +1,6 @@
 from pyswip import Prolog
 from rules_prolog.reglas import *
 
-
 def main_prueba():
 
 

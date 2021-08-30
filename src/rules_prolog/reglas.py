@@ -1,7 +1,10 @@
 from pyswip import Prolog
+import pyswip
+
 
 prolog = Prolog()
-prolog.consult("rules_prolog/turista.pl")
+prolog.consult("turista.pl")
+
 
 
 def restaurante_presupuesto(presupuesto, ciudad, nivelEconomico, tipoComida, porcentaje):
@@ -11,6 +14,8 @@ def restaurante_presupuesto(presupuesto, ciudad, nivelEconomico, tipoComida, por
     for resultado in q2:
         result.append(resultado['X'])
     return result
+
+
 
 
 def todas_las_actividades(presupuesto):

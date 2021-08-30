@@ -97,6 +97,7 @@ playa(punta_cana).
 playa(arena_blanca).
 playa(las_terrenas).
 playa(las_galeras).
+
 %5 sectores turisticos
 sector(boca_chica).
 sector(sosua).
@@ -105,7 +106,7 @@ sector(punta_cana).
 sector(las_terrenas).
 sector(las_galeras).
 
-%6 eventos_culturales secto
+%6 eventos_culturales sector
 eventos_culturales(obra_teatro1, 1500, centro_santiago).
 eventos_culturales(obra_teatro2, 1300, sosua).
 eventos_culturales(carnaval, 0,centro_la_vega).

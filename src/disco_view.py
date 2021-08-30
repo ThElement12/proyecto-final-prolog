@@ -123,6 +123,8 @@ class Ui_Dialog(object):
 "background-color: rgb(211, 215, 207);\n"
 "color: rgb(85, 87, 83);")
         self.comboBox_place_disco_2.setObjectName("comboBox_place_disco_2")
+        self.comboBox_place_disco_2.addItems(["mala","regular","excelente"])
+
         self.label_economy_level_disco = QtWidgets.QLabel(Dialog)
         self.label_economy_level_disco.setGeometry(QtCore.QRect(140, 380, 141, 17))
         self.label_economy_level_disco.setStyleSheet("font-family: Century SchoolBook L;\n"
@@ -138,6 +140,9 @@ class Ui_Dialog(object):
 "background-color: rgb(211, 215, 207);\n"
 "color: rgb(85, 87, 83);")
         self.comboBox_place_disco_3.setObjectName("comboBox_place_disco_3")
+        self.comboBox_place_disco_3.addItems(["economico","medio","elevado"])
+
+
         self.label_score_disco = QtWidgets.QLabel(Dialog)
         self.label_score_disco.setGeometry(QtCore.QRect(140, 300, 141, 17))
         self.label_score_disco.setStyleSheet("font-family: Century SchoolBook L;\n"

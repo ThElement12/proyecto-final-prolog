@@ -22,7 +22,7 @@ class Ui_Dialog(object):
         self.tab = QtWidgets.QWidget()
         self.tab.setObjectName("tab")
         self.pushButton = QtWidgets.QPushButton(self.tab)
-        self.pushButton.setGeometry(QtCore.QRect(520, 30, 81, 41))
+        self.pushButton.setGeometry(QtCore.QRect(520, 20, 81, 41))
         self.pushButton.setStyleSheet("QPushButton{\n"
 "border-radius: 20px;\n"
 "background-color: transparent;\n"
@@ -38,10 +38,11 @@ class Ui_Dialog(object):
         self.pushButton.setIconSize(QtCore.QSize(32, 32))
         self.pushButton.setObjectName("pushButton")
         self.comboBox = QtWidgets.QComboBox(self.tab)
-        self.comboBox.setGeometry(QtCore.QRect(470, 150, 211, 25))
+        self.comboBox.setGeometry(QtCore.QRect(470, 110, 211, 25))
         self.comboBox.setObjectName("comboBox")
+        self.comboBox.addItems(["Boca Chica", "Sosua", "Bavaro", "Punta Cana", "Las Terrenas", "Las Galeras"])
         self.label_place_disco = QtWidgets.QLabel(self.tab)
-        self.label_place_disco.setGeometry(QtCore.QRect(470, 180, 141, 17))
+        self.label_place_disco.setGeometry(QtCore.QRect(470, 140, 141, 17))
         self.label_place_disco.setStyleSheet("font-family: Century SchoolBook L;\n"
 "color: rgb(136, 138, 133);\n"
 "background: transparent;\n"
@@ -49,11 +50,11 @@ class Ui_Dialog(object):
 "font-weight: bold;")
         self.label_place_disco.setObjectName("label_place_disco")
         self.doubleSpinBox = QtWidgets.QDoubleSpinBox(self.tab)
-        self.doubleSpinBox.setGeometry(QtCore.QRect(470, 220, 211, 26))
+        self.doubleSpinBox.setGeometry(QtCore.QRect(470, 170, 211, 26))
         self.doubleSpinBox.setMaximum(100000000.0)
         self.doubleSpinBox.setObjectName("doubleSpinBox")
         self.label_place_disco_2 = QtWidgets.QLabel(self.tab)
-        self.label_place_disco_2.setGeometry(QtCore.QRect(470, 250, 141, 17))
+        self.label_place_disco_2.setGeometry(QtCore.QRect(470, 200, 141, 17))
         self.label_place_disco_2.setStyleSheet("font-family: Century SchoolBook L;\n"
 "color: rgb(136, 138, 133);\n"
 "background: transparent;\n"
@@ -61,12 +62,12 @@ class Ui_Dialog(object):
 "font-weight: bold;")
         self.label_place_disco_2.setObjectName("label_place_disco_2")
         self.spinBox = QtWidgets.QSpinBox(self.tab)
-        self.spinBox.setGeometry(QtCore.QRect(470, 290, 211, 26))
+        self.spinBox.setGeometry(QtCore.QRect(470, 230, 211, 26))
         self.spinBox.setMinimum(1)
         self.spinBox.setMaximum(10)
         self.spinBox.setObjectName("spinBox")
         self.label_place_disco_3 = QtWidgets.QLabel(self.tab)
-        self.label_place_disco_3.setGeometry(QtCore.QRect(470, 320, 141, 17))
+        self.label_place_disco_3.setGeometry(QtCore.QRect(470, 260, 141, 17))
         self.label_place_disco_3.setStyleSheet("font-family: Century SchoolBook L;\n"
 "color: rgb(136, 138, 133);\n"
 "background: transparent;\n"
@@ -74,7 +75,7 @@ class Ui_Dialog(object):
 "font-weight: bold;")
         self.label_place_disco_3.setObjectName("label_place_disco_3")
         self.lineEdit_2 = QtWidgets.QLineEdit(self.tab)
-        self.lineEdit_2.setGeometry(QtCore.QRect(470, 360, 211, 25))
+        self.lineEdit_2.setGeometry(QtCore.QRect(470, 290, 211, 25))
         self.lineEdit_2.setStyleSheet("QLineEdit {\n"
 "font-family: Century SchoolBook L;\n"
 "color: rgb(85, 87, 83);\n"
@@ -85,7 +86,7 @@ class Ui_Dialog(object):
 "}")
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.lineEdit_3 = QtWidgets.QLineEdit(self.tab)
-        self.lineEdit_3.setGeometry(QtCore.QRect(470, 90, 211, 25))
+        self.lineEdit_3.setGeometry(QtCore.QRect(470, 70, 211, 25))
         self.lineEdit_3.setStyleSheet("QLineEdit {\n"
 "font-family: Century SchoolBook L;\n"
 "color: rgb(85, 87, 83);\n"
@@ -118,6 +119,19 @@ class Ui_Dialog(object):
 "\n"
 "}")
         self.pushButton_register_disco.setObjectName("pushButton_register_disco")
+        self.spinBox_close_hour_disco = QtWidgets.QSpinBox(self.tab)
+        self.spinBox_close_hour_disco.setGeometry(QtCore.QRect(470, 330, 211, 26))
+        self.spinBox_close_hour_disco.setMinimum(1)
+        self.spinBox_close_hour_disco.setMaximum(23)
+        self.spinBox_close_hour_disco.setObjectName("spinBox_close_hour_disco")
+        self.label_place_disco_6 = QtWidgets.QLabel(self.tab)
+        self.label_place_disco_6.setGeometry(QtCore.QRect(470, 360, 141, 17))
+        self.label_place_disco_6.setStyleSheet("font-family: Century SchoolBook L;\n"
+"color: rgb(136, 138, 133);\n"
+"background: transparent;\n"
+"border: none;\n"
+"font-weight: bold;")
+        self.label_place_disco_6.setObjectName("label_place_disco_6")
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QtWidgets.QWidget()
         self.tab_2.setObjectName("tab_2")
@@ -161,6 +175,9 @@ class Ui_Dialog(object):
         self.comboBox_2 = QtWidgets.QComboBox(self.tab_2)
         self.comboBox_2.setGeometry(QtCore.QRect(470, 220, 211, 25))
         self.comboBox_2.setObjectName("comboBox_2")
+        self.comboBox_2.addItems(["Boca Chica", "Sosua", "Bavaro", "Punta Cana", "Las Terrenas", "Las Galeras"])
+
+
         self.label_place_disco_5 = QtWidgets.QLabel(self.tab_2)
         self.label_place_disco_5.setGeometry(QtCore.QRect(470, 250, 141, 17))
         self.label_place_disco_5.setStyleSheet("font-family: Century SchoolBook L;\n"
@@ -223,6 +240,8 @@ class Ui_Dialog(object):
         self.comboBox_3 = QtWidgets.QComboBox(self.tab_4)
         self.comboBox_3.setGeometry(QtCore.QRect(470, 140, 211, 25))
         self.comboBox_3.setObjectName("comboBox_3")
+        self.comboBox_3.addItems(["Boca Chica", "Sosua", "Bavaro", "Punta Cana", "Las Terrenas", "Las Galeras"])
+
         self.label_place_disco_7 = QtWidgets.QLabel(self.tab_4)
         self.label_place_disco_7.setGeometry(QtCore.QRect(470, 170, 141, 17))
         self.label_place_disco_7.setStyleSheet("font-family: Century SchoolBook L;\n"
@@ -289,26 +308,27 @@ class Ui_Dialog(object):
         self.tabWidget.raise_()
 
         self.retranslateUi(Dialog)
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Registrar"))
-        self.label_place_disco.setText(_translate("Dialog", "Ciudad"))
+        self.label_place_disco.setText(_translate("Dialog", "Lugar"))
         self.label_place_disco_2.setText(_translate("Dialog", "Precio"))
         self.label_place_disco_3.setText(_translate("Dialog", "Calificación"))
         self.lineEdit_2.setPlaceholderText(_translate("Dialog", "Tipo de comida"))
         self.lineEdit_3.setPlaceholderText(_translate("Dialog", "Nombre restaurante"))
         self.pushButton_register_disco.setText(_translate("Dialog", "Registrar"))
+        self.label_place_disco_6.setText(_translate("Dialog", "Hora cierre"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("Dialog", "Restaurante"))
-        self.lineEdit_4.setPlaceholderText(_translate("Dialog", "Nombre actividad/evento"))
+        self.lineEdit_4.setPlaceholderText(_translate("Dialog", "Nombre actividad"))
         self.label_place_disco_4.setText(_translate("Dialog", "Precio"))
-        self.label_place_disco_5.setText(_translate("Dialog", " Ciudad/Lugar"))
+        self.label_place_disco_5.setText(_translate("Dialog", " Lugar"))
         self.pushButton_register_disco_2.setText(_translate("Dialog", "Registrar"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("Dialog", "Actividades Culturales/Eventos importantes"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("Dialog", "Actividades Culturales"))
         self.lineEdit_6.setPlaceholderText(_translate("Dialog", "Nombre discoteca"))
-        self.label_place_disco_7.setText(_translate("Dialog", "Ciudad"))
+        self.label_place_disco_7.setText(_translate("Dialog", "Lugar"))
         self.label_place_disco_8.setText(_translate("Dialog", "Calificación"))
         self.label_place_disco_9.setText(_translate("Dialog", "Precio entrada"))
         self.pushButton_register_disco_4.setText(_translate("Dialog", "Registrar"))

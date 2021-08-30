@@ -30,6 +30,8 @@ class Ui_Dialog(object):
         self.comboBox_city_restaurant_4.setGeometry(QtCore.QRect(120, 80, 271, 31))
         self.comboBox_city_restaurant_4.setCurrentText("")
         self.comboBox_city_restaurant_4.setObjectName("comboBox_city_restaurant_4")
+        self.comboBox_city_restaurant_4.addItems(["Palacio del Cine", "Cinemacentro", "Cine Colinas Mall", "Cinemateca", "Caribbean Cinemas Fine Arts", "The Colonial Gate 4D Cinema", "Caribbean Cinemas Bavaro"])
+
         self.label_budget_restaurant_3 = QtWidgets.QLabel(self.tab_2)
         self.label_budget_restaurant_3.setGeometry(QtCore.QRect(120, 120, 171, 17))
         self.label_budget_restaurant_3.setStyleSheet("font-family: Century SchoolBook L;\n"
@@ -106,6 +108,8 @@ class Ui_Dialog(object):
 "background-color: rgb(211, 215, 207);\n"
 "color: rgb(85, 87, 83);")
         self.comboBox_place_cinema.setObjectName("comboBox_place_cinema")
+        self.comboBox_place_cinema.addItems(["Boca Chica", "Sosua", "Bavaro", "Punta Cana", "Las Terrenas", "Las Galeras"])
+
         self.label_place_cinema = QtWidgets.QLabel(self.tab)
         self.label_place_cinema.setGeometry(QtCore.QRect(130, 110, 71, 17))
         self.label_place_cinema.setStyleSheet("font-family: Century SchoolBook L;\n"
@@ -121,6 +125,9 @@ class Ui_Dialog(object):
 "background-color: rgb(211, 215, 207);\n"
 "color: rgb(85, 87, 83);")
         self.comboBox_gender_cinema.setObjectName("comboBox_gender_cinema")
+        self.comboBox_gender_cinema.addItems(["Terror", "Drama", "Ficcion", "Humor"])
+
+
         self.label_gender_cinema = QtWidgets.QLabel(self.tab)
         self.label_gender_cinema.setGeometry(QtCore.QRect(130, 170, 71, 17))
         self.label_gender_cinema.setStyleSheet("font-family: Century SchoolBook L;\n"
@@ -221,12 +228,14 @@ class Ui_Dialog(object):
         self.label_budget_restaurant_3.setText(_translate("Dialog", "Nombre cine"))
         self.pushButton_consult_cinema_2.setText(_translate("Dialog", "Consultar"))
         self.label_cinema_recommended_2.setText(_translate("Dialog", "Sucursal/es recomendado/s:"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("Dialog", "Consulta 2"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("Dialog", "Consulta 2"))
+
+
         self.label_place_cinema.setText(_translate("Dialog", "Lugar"))
         self.label_gender_cinema.setText(_translate("Dialog", "Género"))
         self.label_cinema_recommended.setText(_translate("Dialog", "Cine/s recomendado/s:"))
         self.pushButton_consult_cinema.setText(_translate("Dialog", "Consultar"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("Dialog", "Consulta 1"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("Dialog", "Consulta 1"))
 
 
 if __name__ == "__main__":

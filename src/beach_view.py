@@ -111,6 +111,10 @@ class Ui_Dialog(object):
         self.comboBox_city_restaurant.setGeometry(QtCore.QRect(160, 200, 311, 30))
         self.comboBox_city_restaurant.setCurrentText("")
         self.comboBox_city_restaurant.setObjectName("comboBox_city_restaurant")
+        self.comboBox_city_restaurant.addItems(["economico", "medio", "elevado"])
+
+
+
         self.label_city_restaurant = QtWidgets.QLabel(self.tab_2)
         self.label_city_restaurant.setGeometry(QtCore.QRect(160, 170, 61, 17))
         self.label_city_restaurant.setStyleSheet("font-family: Century SchoolBook L;\n"
@@ -163,6 +167,8 @@ class Ui_Dialog(object):
         self.comboBox_city_restaurant_2.setGeometry(QtCore.QRect(160, 140, 311, 31))
         self.comboBox_city_restaurant_2.setCurrentText("")
         self.comboBox_city_restaurant_2.setObjectName("comboBox_city_restaurant_2")
+        self.comboBox_city_restaurant_2.addItems(["Boca Chica", "Sosua", "Bavaro", "Punta Cana", "Las Terrenas", "Las Galeras"])
+
         self.doubleSpinBox_2 = QtWidgets.QDoubleSpinBox(self.tab_2)
         self.doubleSpinBox_2.setGeometry(QtCore.QRect(160, 80, 311, 28))
         font = QtGui.QFont()
@@ -284,6 +290,8 @@ class Ui_Dialog(object):
         self.comboBox_city_restaurant_4.setGeometry(QtCore.QRect(190, 70, 271, 31))
         self.comboBox_city_restaurant_4.setCurrentText("")
         self.comboBox_city_restaurant_4.setObjectName("comboBox_city_restaurant_4")
+        self.comboBox_city_restaurant_4.addItems(["Concierto Ricardo Montaner","Concierto Manny Cruz", "Concierto Juan Luis Guerra", "Noche Jazz"])
+
         self.pushButton_budget_icon = QtWidgets.QPushButton(self.tab)
         self.pushButton_budget_icon.setGeometry(QtCore.QRect(100, 150, 91, 51))
         self.pushButton_budget_icon.setStyleSheet("QPushButton{\n"
@@ -420,7 +428,7 @@ class Ui_Dialog(object):
         self.label_budget_restaurant.setText(_translate("Dialog", "Presupuesto"))
         self.label_economy_level_restaurant.setText(_translate("Dialog", "Nivel económico"))
         self.label_type_of_food_restaurant.setText(_translate("Dialog", "Tipo de comida"))
-        self.label_city_restaurant.setText(_translate("Dialog", "Ciudad"))
+        self.label_city_restaurant.setText(_translate("Dialog", "Lugar"))
         self.label_porcentage_restaurant.setText(_translate("Dialog", "Porcentaje"))
         self.label_restaurant.setText(_translate("Dialog", "Restaurante/s recomendado/s:"))
         self.pushButton_consult_restaurant.setText(_translate("Dialog", "Consultar"))
@@ -445,4 +453,5 @@ if __name__ == "__main__":
     ui.setupUi(Dialog)
     Dialog.show()
     sys.exit(app.exec_())
+
 

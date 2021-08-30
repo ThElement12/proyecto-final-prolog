@@ -120,6 +120,9 @@ QPushButton:hover{
       <bold>true</bold>
      </font>
     </property>
+    <property name="toolTipDuration">
+     <number>-1</number>
+    </property>
     <property name="styleSheet">
      <string notr="true">QLabel{
 color: rgb(0, 21, 70);
