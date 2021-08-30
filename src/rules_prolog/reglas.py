@@ -12,6 +12,8 @@ def restaurante_presupuesto(presupuesto, ciudad, nivelEconomico, tipoComida, por
     result = []
     for resultado in q2:
         result.append(resultado['X'])
+    if len(result) == 0:
+        result= ["No se encontraron resultados"]
     return result
 
 
@@ -23,6 +25,8 @@ def todas_las_actividades(presupuesto):
     results = []
     for result in q2:
         results.append((result['X'], result['Y']))
+    if len(results) == 0:
+        results= ["No se encontraron resultados"]
     return results
 
 
@@ -32,6 +36,8 @@ def buscar_disco_presupuesto(ciudad, presupuesto, puntuacion, precio):
     results = []
     for result in q2:
         results.append(result['X'])
+    if len(results) == 0:
+        results= ["No se encontraron resultados"]
     return results
 
 
@@ -41,6 +47,8 @@ def cines_peliculas(lugar, genero):
     results = []
     for result in q2:
         results.append(result['X'])
+    if len(results) == 0:
+        results= ["No se encontraron resultados"]
     return results
 
 
@@ -50,7 +58,8 @@ def sucursales(nombre):
     results = []
     for result in q2:
         results = results + result['X']
-
+    if len(results) == 0:
+        results= ["No se encontraron resultados"]
     return results
 
 
@@ -60,6 +69,8 @@ def cine_sucursales(nombre):
     results = []
     for result in q2:
         results = results + result['X']
+    if len(results) == 0:
+        results= ["No se encontraron resultados"]
 
     return results
 
@@ -70,6 +81,8 @@ def restauranteimp(nombre, presupuesto,hora):
     results = []
     for result in q2:
         results.append(result['X'])
+    if len(results) == 0:
+        results= ["No se encontraron resultados"]
 
     return results
 
