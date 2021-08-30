@@ -36,7 +36,7 @@ sectores_provincia(higuey,[bavaro, punta_cana]).
 %restaurante (nombre, lugar, precio, calificacion, hora de cierre)
 restaurante(boca_marina,boca_chica, 400, 2, 22).
 restaurante(boca_marina,centro_santo_domingo, 400, 5, 23).
-restaurante(Nipau,centro_santo_domingo, 500, 4, 20).
+restaurante(nipau,centro_santo_domingo, 500, 4, 20).
 restaurante(once_30,centro_santiago, 1000, 7, 16).
 restaurante(noah,centro_santiago, 1400, 9, 0).
 restaurante(restaurante_maria,sosua, 100, 5, 23).
@@ -44,7 +44,7 @@ restaurante(food_mart_bavaro,bavaro, 200, 3, 14).
 restaurante(buns_burger,bavaro, 900, 10, 18).
 restaurante(margot_restaurant,sosua, 700, 6, 12).
 restaurante(el_rincon_del_sabor,punta_cana, 250, 6, 3).
-restaurante(la_cava_kitchen_and _bar,punta_cana, 400, 8, 5).
+restaurante(la_cava_kitchen_and_bar,punta_cana, 400, 8, 5).
 
 discoteca(discoteca1,centro_santo_domingo, 100, 1).
 discoteca(discoteca2,centro_santiago, 500, 7).
@@ -66,7 +66,7 @@ cine(caribbean_cinemas_bavaro,punta_cana, 250, 9).
 
 %2 tipocomida restaurantes
 tipocomida(boca_marina, criolla).
-tipocomida(Nipau, casera).
+tipocomida(nipau, casera).
 tipocomida(once_30, casera).
 tipocomida(noah, gourmet).
 tipocomida(restaurante_maria, buffet).
@@ -74,7 +74,7 @@ tipocomida(food_mart_bavaro, criolla).
 tipocomida(buns_burger, rapida).
 tipocomida(margot_restaurant, buffet).
 tipocomida(el_rincon_del_sabor, criolla).
-tipocomida(la_cava_kitchen_and _bar, gourmet).
+tipocomida(la_cava_kitchen_and_bar, gourmet).
 
 %3 Rango de precio (economico, medio, elevado)
 rango_precio(Precio, economico):- Precio =< 599.
