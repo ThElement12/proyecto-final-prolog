@@ -34,17 +34,17 @@ sectores_provincia(higuey,[bavaro, punta_cana]).
 
 %1.D sectores_provincia-actividades
 %restaurante (nombre, lugar, precio, calificacion, hora de cierre)
-restaurante(restaurante1,boca_chica, 400, 2, 22).
-restaurante(restaurante1,centro_santo_domingo, 400, 5, 23).
-restaurante(restaurante2,centro_santo_domingo, 500, 4, 20).
-restaurante(restaurante3,centro_santiago, 1000, 7, 16).
-restaurante(restaurante4,centro_santiago, 1400, 9, 0).
-restaurante(restaurante5,sosua, 100, 5, 23).
-restaurante(restaurante6,bavaro, 200, 3, 14).
-restaurante(restaurante7,bavaro, 900, 10, 18).
-restaurante(restaurante8,sosua, 700, 6, 12).
-restaurante(restaurante9,punta_cana, 250, 6, 3).
-restaurante(restaurante10,punta_cana, 400, 8, 5).
+restaurante(boca_marina,boca_chica, 400, 2, 22).
+restaurante(boca_marina,centro_santo_domingo, 400, 5, 23).
+restaurante(Nipau,centro_santo_domingo, 500, 4, 20).
+restaurante(once_30,centro_santiago, 1000, 7, 16).
+restaurante(noah,centro_santiago, 1400, 9, 0).
+restaurante(restaurante_maria,sosua, 100, 5, 23).
+restaurante(food_mart_bavaro,bavaro, 200, 3, 14).
+restaurante(buns_burger,bavaro, 900, 10, 18).
+restaurante(margot_restaurant,sosua, 700, 6, 12).
+restaurante(el_rincon_del_sabor,punta_cana, 250, 6, 3).
+restaurante(la_cava_kitchen_and _bar,punta_cana, 400, 8, 5).
 
 discoteca(discoteca1,centro_santo_domingo, 100, 1).
 discoteca(discoteca2,centro_santiago, 500, 7).
@@ -55,26 +55,26 @@ discoteca(discoteca6,punta_cana, 1200, 10).
 discoteca(discoteca7, centro_santiago, 1400, 10).
 discoteca(discoteca8,punta_cana, 1200, 8).
 
-cine(cine1, centro_santiago, 500, 5).
-cine(cine1, centro_santo_domingo, 200, 9).
-cine(cine2,centro_santiago, 250, 9).
-cine(cine3,centro_santiago, 250, 8).
-cine(cine4,centro_santo_domingo, 400, 1).
-cine(cine5,centro_santo_domingo, 300, 8).
-cine(cine6,centro_santo_domingo, 300, 6).
-cine(cine7,punta_cana, 250, 9).
+cine(palacio_del_cine, centro_santiago, 500, 5).
+cine(palacio_del_cine, centro_santo_domingo, 200, 9).
+cine(cinema_centro,centro_santiago, 250, 9).
+cine(cine_colinas_mall,centro_santiago, 250, 8).
+cine(cinemateca,centro_santo_domingo, 400, 1).
+cine(caribbean_cinemas_fine_arts,centro_santo_domingo, 300, 8).
+cine(the_colonial_gate_4D_cinema,centro_santo_domingo, 300, 6).
+cine(caribbean_cinemas_bavaro,punta_cana, 250, 9).
 
 %2 tipocomida restaurantes
-tipocomida(restaurante1, criolla).
-tipocomida(restaurante2, casera).
-tipocomida(restaurante3, casera).
-tipocomida(restaurante4, gourmet).
-tipocomida(restaurante5, buffet).
-tipocomida(restaurante6, criolla).
-tipocomida(restaurante7, rapida).
-tipocomida(restaurante8, buffet).
-tipocomida(restaurante9, criolla).
-tipocomida(restaurante10, gourmet).
+tipocomida(boca_marina, criolla).
+tipocomida(Nipau, casera).
+tipocomida(once_30, casera).
+tipocomida(noah, gourmet).
+tipocomida(restaurante_maria, buffet).
+tipocomida(food_mart_bavaro, criolla).
+tipocomida(buns_burger, rapida).
+tipocomida(margot_restaurant, buffet).
+tipocomida(el_rincon_del_sabor, criolla).
+tipocomida(la_cava_kitchen_and _bar, gourmet).
 
 %3 Rango de precio (economico, medio, elevado)
 rango_precio(Precio, economico):- Precio =< 599.
@@ -111,23 +111,23 @@ eventos_culturales(obra_teatro2, 1300, sosua).
 eventos_culturales(carnaval, 0,centro_la_vega).
 
 %7 eventos, sector
-eventos_importantes(concierto1, 600, boca_chica).
-eventos_importantes(concierto2, 1300, sosua).
+eventos_importantes(concierto_ricardo_montaner , 600, boca_chica).
+eventos_importantes(concierto_manny_cruz, 1300, sosua).
 eventos_importantes(concierto_juan_luis_guerra, 600, boca_chica).
 eventos_importantes(noche_jazz, 1300, centro_santiago).
 %8 cine-peliculas
-cine_pelicula(cine1, [pelicula1, pelicula2, pelicula3, pelicula4]).
-cine_pelicula(cine2,  [pelicula2,pelicula4, pelicula1]).
-cine_pelicula(cine3,  [pelicula1, pelicula2, pelicula3, pelicula4]).
-cine_pelicula(cine4,  [pelicula2,pelicula4, pelicula1]).
-cine_pelicula(cine5,  [pelicula1, pelicula2, pelicula3]).
-cine_pelicula(cine6,  [pelicula2,pelicula4, pelicula1]).
-cine_pelicula(cine7, [pelicula2,pelicula4, pelicula1]).
+cine_pelicula(palacio_del_cine, [jakobs_wife, the_little_things, dune, tom_y_jerry]).
+cine_pelicula(cinema_centro, [the_little_things,tom_y_jerry, jakobs_wife]).
+cine_pelicula(cine_colinas_mall, [jakobs_wife, the_little_things, dune, tom_y_jerry]).
+cine_pelicula(cinemateca, [the_little_things,tom_y_jerry, jakobs_wife]).
+cine_pelicula(caribbean_cinemas_fine_arts, [jakobs_wife, the_little_things, dune]).
+cine_pelicula(the_colonial_gate_4D_cinema, [the_little_things,tom_y_jerry, jakobs_wife]).
+cine_pelicula(caribbean_cinemas_bavaro, [the_little_things,tom_y_jerry, jakobs_wife]).
 %8 A genero-pelicula
-genero(pelicula1, terror).
-genero(pelicula2, drama).
-genero(pelicula3, ficcion).
-genero(pelicula4, humor).
+genero(jakobs_wife, terror).
+genero(the_little_things, drama).
+genero(dune, ficcion).
+genero(tom_y_jerry, humor).
 
 %reglas generales
 buscarEnLista([], _):-fail.
