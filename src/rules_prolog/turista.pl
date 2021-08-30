@@ -153,7 +153,7 @@ buscarPeliculaPorGenero([], _):- fail.
 buscarPeliculaPorGenero([Cabeza|_], Genero ):- genero(Cabeza, Genero), !.
 buscarPeliculaPorGenero([_|Cola], Genero):- buscarPeliculaPorGenero(Cola, Genero).
 
-cinesPelicula(Lugar, Genero, Cines):- findall(Cine, (cine_pelicula(Cine, Peliculas), cine(Cine,Lugar,_,_), buscarPeliculaPorGenero(Peliculas, Genero)), Cines).
+cinesPelicula(Lugar, Genero, Cine):- cine_pelicula(Cine, Peliculas), cine(Cine,Lugar,_,_), buscarPeliculaPorGenero(Peliculas, Genero).
 
 %Bares discotecas de precio elevado
 buscarDiscoPresupuesto(Lugar, Presupuesto, Puntuacion, CalPrecio, Discotecas):-findall(Disco, (
@@ -176,5 +176,3 @@ cine_sucursales(Nombre, Resultado):- bagof(Sector,cine(Nombre,Sector,_,_),Result
 restauranteimp(Evento,Presupuesto,Hora_restaurante, Restaurante):- eventos_importantes(Evento,Precio,Lugar)
 ,restaurante(Restaurante,Lugar,Preciob,_,Hora_cierre),Hora_restaurante<Hora_cierre
 ,Calculo is Precio+Preciob,Presupuesto>=Calculo.
-
-
