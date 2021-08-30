@@ -68,3 +68,32 @@ def restauranteimp(nombre, presupuesto,hora):
         results.append(result['X'])
 
     return results
+
+##REGISTRAR
+
+
+def registrar_restaurante(nombre, ciudad, precio, calificacion, hora):
+    prolog.assertz(f"restaurante({nombre},{ciudad}, {precio}, {calificacion}, {hora})")
+    q2 = prolog.query(f"restaurante({nombre}, X, _,_,_)")
+
+    print("DEBUG RESTAURANTES CON ESE NOMBRE: ")
+    for results in q2:
+        print(results['X'])
+
+
+def registrar_actividad(nombre, precio, lugar):
+    prolog.assertz(f"eventos_importantes({nombre}, {precio}, {lugar})")
+    q2 = prolog.query(f"eventos_importantes({nombre},_,X)")
+
+    print("DEBUG EVENTOS IMPORTANTES CON ESE NOMBRE: ")
+    for results in q2:
+        print(results['X'])
+
+
+def registrar_discoteca(nombre, ciudad, calificacion, precio):
+    prolog.assertz(f"discoteca({nombre},{ciudad}, {precio}, {calificacion})")
+    q2 = prolog.query(f"discoteca({nombre}, X, _,_)")
+
+    print("DEBUG DISCOTECA CON ESE NOMBRE: ")
+    for results in q2:
+        print(results['X'])

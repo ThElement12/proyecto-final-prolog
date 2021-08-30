@@ -176,5 +176,3 @@ cine_sucursales(Nombre, Resultado):- bagof(Sector,cine(Nombre,Sector,_,_),Result
 restauranteimp(Evento,Presupuesto,Hora_restaurante, Restaurante):- eventos_importantes(Evento,Precio,Lugar)
 ,restaurante(Restaurante,Lugar,Preciob,_,Hora_cierre),Hora_restaurante<Hora_cierre
 ,Calculo is Precio+Preciob,Presupuesto>=Calculo.
-
-
