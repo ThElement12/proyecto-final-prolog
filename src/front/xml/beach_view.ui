@@ -251,7 +251,7 @@ border: none;
 font-weight: bold;</string>
      </property>
      <property name="text">
-      <string>Ciudad</string>
+      <string>Lugar</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_porcentage_restaurant">
@@ -711,7 +711,7 @@ border: none;
 font-weight: bold;</string>
      </property>
      <property name="text">
-      <string>Hora restaurante</string>
+      <string>Hora cierre</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_event_icon">

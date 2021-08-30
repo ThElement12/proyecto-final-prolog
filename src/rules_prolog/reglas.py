@@ -6,7 +6,6 @@ prolog = Prolog()
 prolog.consult("turista.pl")
 
 
-
 def restaurante_presupuesto(presupuesto, ciudad, nivelEconomico, tipoComida, porcentaje):
     query = f"restaurantePresupuesto({presupuesto}, {ciudad}, {nivelEconomico}, {tipoComida}, {porcentaje}, X)"
     q2 = prolog.query(query)
@@ -32,7 +31,7 @@ def buscar_disco_presupuesto(ciudad, presupuesto, puntuacion, precio):
     q2 = prolog.query(query)
     results = []
     for result in q2:
-        results.append(result['X'][0])
+        results.append(result['X'])
     return results
 
 

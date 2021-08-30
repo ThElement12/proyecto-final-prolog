@@ -7,6 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import rules_prolog.reglas as reglas
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -30,7 +31,7 @@ class Ui_Dialog(object):
         self.comboBox_city_restaurant_4.setGeometry(QtCore.QRect(120, 80, 271, 31))
         self.comboBox_city_restaurant_4.setCurrentText("")
         self.comboBox_city_restaurant_4.setObjectName("comboBox_city_restaurant_4")
-        self.comboBox_city_restaurant_4.addItems(["Palacio del Cine", "Cinemacentro", "Cine Colinas Mall", "Cinemateca", "Caribbean Cinemas Fine Arts", "The Colonial Gate 4D Cinema", "Caribbean Cinemas Bavaro"])
+        self.comboBox_city_restaurant_4.addItems(["Palacio del Cine", "Cinema Centro", "Cine Colinas Mall", "Cinemateca", "Caribbean Cinemas Fine Arts", "The Colonial Gate 4D Cinema", "Caribbean Cinemas Bavaro"])
 
         self.label_budget_restaurant_3 = QtWidgets.QLabel(self.tab_2)
         self.label_budget_restaurant_3.setGeometry(QtCore.QRect(120, 120, 171, 17))
@@ -108,7 +109,7 @@ class Ui_Dialog(object):
 "background-color: rgb(211, 215, 207);\n"
 "color: rgb(85, 87, 83);")
         self.comboBox_place_cinema.setObjectName("comboBox_place_cinema")
-        self.comboBox_place_cinema.addItems(["Boca Chica", "Sosua", "Bavaro", "Punta Cana", "Las Terrenas", "Las Galeras"])
+        self.comboBox_place_cinema.addItems(["Boca Chica", "Centro Santo Domingo", "Centro Santiago", "Sosua", "Bavaro","Punta Cana"])
 
         self.label_place_cinema = QtWidgets.QLabel(self.tab)
         self.label_place_cinema.setGeometry(QtCore.QRect(130, 110, 71, 17))
@@ -222,6 +223,41 @@ class Ui_Dialog(object):
         self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
+        self.pushButton_consult_cinema_2.clicked.connect(self.consult_cinema1)
+        self.pushButton_consult_cinema.clicked.connect(self.consult_cinema2)
+        
+        
+    
+    def consult_cinema1(self):
+                nombre = str(self.comboBox_city_restaurant_4.currentText())
+                nombrechanged = nombre.replace(' ', '_').lower()
+                result_cinema2 = reglas.cine_sucursales(nombrechanged)
+
+                final_result = " "
+                for restaurant in reglas.cine_sucursales(nombrechanged):
+                        final_result = final_result + str(restaurant) + "\n"
+
+                self.label_result_cinema_recommended_2.setText(str(final_result.replace('_', ' ').upper()))
+    
+    
+    def consult_cinema2(self):
+                nombre = str(self.comboBox_place_cinema.currentText())
+                nombrechanged = nombre.replace(' ', '_').lower()
+                nombregen = str(self.comboBox_gender_cinema.currentText())
+                nombregenchanged = nombregen.replace(' ', '_').lower()
+                result_cinema1 = reglas.cines_peliculas(nombrechanged,nombregenchanged)
+
+                final_result = " "
+                for restaurant in reglas.cines_peliculas(nombrechanged,nombregenchanged):
+                        final_result = final_result + str(restaurant) + "\n"
+
+
+                self.label_result_cinema_recommended.setText(str(final_result.replace('_', ' ').upper()))
+
+
+
+
+
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Cine"))
@@ -236,7 +272,6 @@ class Ui_Dialog(object):
         self.label_cinema_recommended.setText(_translate("Dialog", "Cine/s recomendado/s:"))
         self.pushButton_consult_cinema.setText(_translate("Dialog", "Consultar"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("Dialog", "Consulta 1"))
-
 
 if __name__ == "__main__":
     import sys

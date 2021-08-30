@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+import rules_prolog.reglas as reglas
 
 
 class Ui_Dialog(object):
@@ -92,11 +92,26 @@ class Ui_Dialog(object):
 "background-color: rgb(211, 215, 207);\n"
 "border-bottom: 1px solid #717072;\n"
 "color: rgb(0, 0, 0);")
-        self.doubleSpinBox_3.setMaximum(100.0)
+        self.doubleSpinBox_3.setMaximum(100000000.0)
         self.doubleSpinBox_3.setObjectName("doubleSpinBox_3")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
+
+
+        self.pushButton_consult_culture.clicked.connect(self.consult_culture)
+
+    def consult_culture(self):
+        presupuesto = self.doubleSpinBox_3.value()
+        result_culture = reglas.todas_las_actividades(presupuesto)
+        print(result_culture)
+        final_result = " "
+        for restaurant in reglas.todas_las_actividades(presupuesto):
+                final_result = final_result + str(restaurant) + "\n"
+
+
+        self.label_result_culture.setText(str(final_result.replace('_', ' ').upper()))    
+
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate

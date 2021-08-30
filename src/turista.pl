@@ -61,7 +61,7 @@ cine(cinema_centro,centro_santiago, 250, 9).
 cine(cine_colinas_mall,centro_santiago, 250, 8).
 cine(cinemateca,centro_santo_domingo, 400, 1).
 cine(caribbean_cinemas_fine_arts,centro_santo_domingo, 300, 8).
-cine(the_colonial_gate_4D_cinema,centro_santo_domingo, 300, 6).
+cine(the_colonial_gate_4d_cinema,centro_santo_domingo, 300, 6).
 cine(caribbean_cinemas_bavaro,punta_cana, 250, 9).
 
 %2 tipocomida restaurantes
@@ -122,7 +122,7 @@ cine_pelicula(cinema_centro, [the_little_things,tom_y_jerry, jakobs_wife]).
 cine_pelicula(cine_colinas_mall, [jakobs_wife, the_little_things, dune, tom_y_jerry]).
 cine_pelicula(cinemateca, [the_little_things,tom_y_jerry, jakobs_wife]).
 cine_pelicula(caribbean_cinemas_fine_arts, [jakobs_wife, the_little_things, dune]).
-cine_pelicula(the_colonial_gate_4D_cinema, [the_little_things,tom_y_jerry, jakobs_wife]).
+cine_pelicula(the_colonial_gate_4d_cinema, [the_little_things,tom_y_jerry, jakobs_wife]).
 cine_pelicula(caribbean_cinemas_bavaro, [the_little_things,tom_y_jerry, jakobs_wife]).
 %8 A genero-pelicula
 genero(jakobs_wife, terror).

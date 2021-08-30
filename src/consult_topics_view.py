@@ -8,10 +8,12 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from beach_view import Ui_Dialog as beach_view
+from beach_view import *
 from cultural_activities_view import Ui_Dialog as cultural_activity
 from cinema_view import Ui_Dialog as cinema_view
 from disco_view import Ui_Dialog as disco_view
 from register_view import Ui_Dialog as register_view
+
 
 
 class Ui_Form(object):
@@ -120,6 +122,7 @@ class Ui_Form(object):
         self.btn_cons_cines.clicked.connect(self.connect_to_cinema)
         self.btn_cons_d.clicked.connect(self.connect_to_disco)
         self.btn_cons_eventosi_2.clicked.connect(self.connect_to_register)
+
 
 
     def connect_to_restaurants(self):

@@ -6,7 +6,9 @@
 #
 # WARNING! All changes made in this file will be lost!
 
+from typing import final
 from PyQt5 import QtCore, QtGui, QtWidgets
+import rules_prolog.reglas as reglas
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -91,6 +93,7 @@ class Ui_Dialog(object):
         self.comboBox_3 = QtWidgets.QComboBox(self.tab_2)
         self.comboBox_3.setGeometry(QtCore.QRect(160, 260, 311, 30))
         self.comboBox_3.setObjectName("comboBox_3")
+        self.comboBox_3.addItems(["criolla","casera","gourmet","buffet","rapida"])
         self.label_economy_level_restaurant = QtWidgets.QLabel(self.tab_2)
         self.label_economy_level_restaurant.setGeometry(QtCore.QRect(160, 230, 131, 17))
         self.label_economy_level_restaurant.setStyleSheet("font-family: Century SchoolBook L;\n"
@@ -162,13 +165,19 @@ class Ui_Dialog(object):
 "    background-color: rgb(114, 159, 207);\n"
 "\n"
 "}")
+
+
+
+
         self.pushButton_consult_restaurant.setObjectName("pushButton_consult_restaurant")
         self.comboBox_city_restaurant_2 = QtWidgets.QComboBox(self.tab_2)
         self.comboBox_city_restaurant_2.setGeometry(QtCore.QRect(160, 140, 311, 31))
         self.comboBox_city_restaurant_2.setCurrentText("")
         self.comboBox_city_restaurant_2.setObjectName("comboBox_city_restaurant_2")
-        self.comboBox_city_restaurant_2.addItems(["Boca Chica", "Sosua", "Bavaro", "Punta Cana", "Las Terrenas", "Las Galeras"])
+        self.comboBox_city_restaurant_2.addItems(["Boca Chica", "Centro Santo Domingo", "Centro Santiago", "Sosua", "Bavaro","Punta Cana"])
 
+
+        #Boca Chica", "Sosua", "Bavaro", "Punta Cana", "Las Terrenas", "Las Galeras
         self.doubleSpinBox_2 = QtWidgets.QDoubleSpinBox(self.tab_2)
         self.doubleSpinBox_2.setGeometry(QtCore.QRect(160, 80, 311, 28))
         font = QtGui.QFont()
@@ -177,7 +186,7 @@ class Ui_Dialog(object):
         font.setWeight(50)
         self.doubleSpinBox_2.setFont(font)
         self.doubleSpinBox_2.setStyleSheet("")
-        self.doubleSpinBox_2.setMaximum(100.0)
+        self.doubleSpinBox_2.setMaximum(100000000.00)
         self.doubleSpinBox_2.setObjectName("doubleSpinBox_2")
         self.doubleSpinBox_3 = QtWidgets.QDoubleSpinBox(self.tab_2)
         self.doubleSpinBox_3.setGeometry(QtCore.QRect(160, 320, 311, 28))
@@ -219,6 +228,8 @@ class Ui_Dialog(object):
         self.comboBox_name_of_restaurant.setGeometry(QtCore.QRect(180, 70, 271, 31))
         self.comboBox_name_of_restaurant.setCurrentText("")
         self.comboBox_name_of_restaurant.setObjectName("comboBox_name_of_restaurant")
+        self.comboBox_name_of_restaurant.addItems(["Boca Marina","Nipau","Once 30","Noah","Restaurante Maria", "Food Mart Bavaro", "Buns Burger", "Margot Restaurant", "El Rincon del Sabor", "La Cava Kitchen and Bar"])
+
         self.label_name_of_restaurant = QtWidgets.QLabel(self.tab_4)
         self.label_name_of_restaurant.setGeometry(QtCore.QRect(180, 110, 171, 17))
         self.label_name_of_restaurant.setStyleSheet("font-family: Century SchoolBook L;\n"
@@ -322,7 +333,7 @@ class Ui_Dialog(object):
         font.setWeight(50)
         self.doubleSpinBox_4.setFont(font)
         self.doubleSpinBox_4.setStyleSheet("")
-        self.doubleSpinBox_4.setMaximum(100.0)
+        self.doubleSpinBox_4.setMaximum(100000000.0)
         self.doubleSpinBox_4.setObjectName("doubleSpinBox_4")
         self.spinBox_hour_restaurant_3 = QtWidgets.QSpinBox(self.tab)
         self.spinBox_hour_restaurant_3.setGeometry(QtCore.QRect(190, 250, 271, 26))
@@ -422,6 +433,53 @@ class Ui_Dialog(object):
         self.tabWidget_2.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
+
+        self.pushButton_consult_restaurant.clicked.connect(self.consult_restaurant)
+        self.pushButton_consult_restaurant_2.clicked.connect(self.consult_restaurant_2)
+        self.pushButton_consult_restaurant_3.clicked.connect(self.consult_restaurant_3)
+
+   
+    def consult_restaurant(self):
+                presupuesto = self.doubleSpinBox_2.value()
+                lugar = str(self.comboBox_city_restaurant_2.currentText())
+                lugar_changed = lugar.replace(' ', '_').lower() 
+                nivel_economico = str(self.comboBox_city_restaurant.currentText())
+                tipo_comida = str(self.comboBox_3.currentText())
+                porcentaje = self.doubleSpinBox_3.value()
+                result_restaurant = reglas.restaurante_presupuesto(presupuesto,lugar_changed,nivel_economico,tipo_comida,porcentaje)
+                
+                final_result = " "
+                for restaurant in reglas.restaurante_presupuesto(presupuesto,lugar_changed,nivel_economico,tipo_comida,porcentaje):
+                        final_result = final_result + str(restaurant) + "\n"
+                
+                
+                self.label_result_disco_recommended_2.setText(str(final_result.replace('_', ' ').upper()))
+
+    def consult_restaurant_2(self):
+                restaurant_name = str(self.comboBox_name_of_restaurant.currentText())
+                restaurant_name_parsed = restaurant_name.replace(' ', '_').lower() 
+                result_restaurant = reglas.sucursales(restaurant_name_parsed)
+
+                final_result = " "
+                for restaurant in reglas.sucursales(restaurant_name_parsed):
+                        final_result = final_result + str(restaurant) + "\n"
+                
+                self.label_result_restaurant_recommended.setText(str(final_result.replace('_', ' ').upper()))
+
+    def consult_restaurant_3(self):
+            event_name = str(self.comboBox_city_restaurant_4.currentText())
+            event_name_parsed = event_name.replace(' ', '_').lower() 
+            budget = self.doubleSpinBox_4.value()
+            close_hour = self.spinBox_hour_restaurant_3.value()
+            result_event = reglas.restauranteimp(event_name_parsed,budget,close_hour)
+            final_result = " "
+            for restaurant in reglas.restauranteimp(event_name_parsed,budget,close_hour):
+                final_result = final_result + str(restaurant) + "\n"
+                
+            self.label_result_disco_recommended.setText(str(final_result.replace('_', ' ').upper()))
+
+
+
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Restaurantes"))
@@ -439,7 +497,7 @@ class Ui_Dialog(object):
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_4), _translate("Dialog", "Consulta 2"))
         self.label_budget_restaurant_3.setText(_translate("Dialog", "Nombre evento"))
         self.label_budget_restaurant_4.setText(_translate("Dialog", "Presupuesto"))
-        self.label_hour_restaurant_3.setText(_translate("Dialog", "Hora restaurante"))
+        self.label_hour_restaurant_3.setText(_translate("Dialog", "Hora cierre"))
         self.pushButton_consult_restaurant_3.setText(_translate("Dialog", "Consultar"))
         self.label_recommended_restaurant_3.setText(_translate("Dialog", "Restaurante/s recomendado/s:"))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab), _translate("Dialog", "Consulta 3"))

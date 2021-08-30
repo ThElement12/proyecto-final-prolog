@@ -7,6 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import rules_prolog.reglas as reglas
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -116,6 +117,10 @@ class Ui_Dialog(object):
 "background-color: rgb(211, 215, 207);\n"
 "color: rgb(85, 87, 83);")
         self.comboBox_place_disco.setObjectName("comboBox_place_disco")
+        self.comboBox_place_disco.addItems(["Boca Chica", "Centro Santo Domingo", "Centro Santiago", "Sosua", "Bavaro","Punta Cana"])
+
+
+
         self.comboBox_place_disco_2 = QtWidgets.QComboBox(Dialog)
         self.comboBox_place_disco_2.setGeometry(QtCore.QRect(140, 270, 241, 25))
         self.comboBox_place_disco_2.setStyleSheet("font-weight: bold;\n"
@@ -178,7 +183,7 @@ class Ui_Dialog(object):
 "background-color: rgb(211, 215, 207);\n"
 "border-bottom: 1px solid #717072;\n"
 "color: rgb(0, 0, 0);")
-        self.doubleSpinBox_3.setMaximum(100.0)
+        self.doubleSpinBox_3.setMaximum(100000000.0)
         self.doubleSpinBox_3.setObjectName("doubleSpinBox_3")
         self.label_result_disco_recommended = QtWidgets.QLabel(Dialog)
         self.label_result_disco_recommended.setGeometry(QtCore.QRect(470, 110, 591, 371))
@@ -193,6 +198,26 @@ class Ui_Dialog(object):
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
+
+        self.pushButton_consult_disco.clicked.connect(self.consult_disco)
+
+    def consult_disco(self):
+        lugar = str(self.comboBox_place_disco.currentText())
+        lugarchanged = lugar.replace(' ', '_').lower()
+        presupuesto = self.doubleSpinBox_3.value()
+        puntuacion = str(self.comboBox_place_disco_2.currentText())
+        nivel_economico = str(self.comboBox_place_disco_3.currentText())
+
+        result_disco = reglas.buscar_disco_presupuesto(lugarchanged,presupuesto,puntuacion,nivel_economico)
+
+        final_result = " "
+        for restaurant in reglas.buscar_disco_presupuesto(lugarchanged,presupuesto,puntuacion,nivel_economico)[0]:
+                final_result = final_result + str(restaurant) + "\n"
+
+
+        self.label_result_disco_recommended.setText(str(final_result.replace('_', ' ').upper()))
+
+
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
