@@ -85,7 +85,6 @@ class Ui_Form(object):
         self.btn_consultar_3.setText(_translate("Form", "Terrazas"))
         self.btn_consultar_4.setText(_translate("Form", "Playas"))
 
-
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
